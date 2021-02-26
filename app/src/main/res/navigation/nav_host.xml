@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/permission_fragment">
+
+    <fragment android:id="@+id/camera_fragment"
+        android:label="Camera"
+        android:name="com.example.facescanner.fragments.CameraFragment">
+        <action android:id="@+id/camera_to_preview"
+            app:destination="@id/preview_fragment"
+            app:popUpTo="@id/camera_fragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment android:id="@+id/permission_fragment"
+        android:name="com.example.facescanner.fragments.PermissionFragment">
+        <action android:id="@+id/permission_to_camera"
+            app:destination="@id/camera_fragment"
+            app:popUpTo="@id/permission_fragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+
+    <fragment android:id="@+id/preview_fragment"
+        android:name="com.example.facescanner.fragments.PreviewFragment"
+        android:label="Preview"
+        tools:layout="@layout/fragment_preview">
+        <action android:id="@+id/preview_to_cropped"
+            app:destination="@id/cropped_fragment"
+            app:popUpTo="@id/preview_fragment" />
+    </fragment>
+
+    <fragment android:id="@+id/cropped_fragment"
+        android:label="Cropped Image"
+        android:name="com.example.facescanner.fragments.CropedPreviewFragment"
+        tools:layout="@layout/fragment_croped_preview"/>
+</navigation>

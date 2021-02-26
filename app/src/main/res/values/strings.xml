@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FaceScanner</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pinch_to_zoom_in_out">Pinch to zoom in/out</string>
+    <string name="cancel">Cancel</string>
+    <string name="crop">Crop</string>
+</resources>
